@@ -1,0 +1,31 @@
+﻿
+@using Kayseri_Poje.Models
+@model TBLKITAP
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+
+<h2>Kitap Ekle</h2>
+<br />
+<form method="post">
+    <div style="margin-bottom:15px;">
+        @Html.LabelFor(m => m.AD)
+        @Html.TextBoxFor(m => m.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px;">
+        @Html.LabelFor(m => m.YAZAR)
+        @Html.TextBoxFor(m => m.YAZAR, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px;">
+        @Html.LabelFor(m => m.SAYFA)
+        @Html.TextBoxFor(m => m.SAYFA, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px;">
+        @Html.LabelFor(m => m.KATEDORI)
+        @Html.TextBoxFor(m => m.KATEDORI, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

@@ -1,0 +1,32 @@
+﻿
+@using Kayseri_Poje.Models
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KitapLayout.cshtml";
+}
+<table class="table table-bordered  ">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Yazarı</th>
+        <th>Sayfa Sayısı</th>
+        <th>Tür</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.KİTAPID</td>
+            <td>@item.AD</td>
+            <td>@item.YAZAR</td>
+            <td>@item.SAYFA</td>
+            <td>@item.TBLKATEGORI.KATEGORİAD</td>
+            <td><a class="btn btn-danger" onclick="return confirm(@item.AD 'İsimli kitabı sil?')" href="/Kitap/KitapSil/@item.KİTAPID">Sil</a></td>
+            <td><a class="btn btn-warning" href="/Kitap/KitapGetir/@item.KİTAPID">Düzenle</a></td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="/Kitap/KitapEkle">Yeni Kitap</a>
+
+
